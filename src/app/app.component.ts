@@ -16,6 +16,14 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
       splashScreen.hide();
+
+      platform.pause.subscribe(() => {
+        console.log('[INFO] App paused');
+      });
+
+      platform.resume.subscribe(() => {
+        console.log('[INFO] App resumed');
+      });
     });
   }
 }
